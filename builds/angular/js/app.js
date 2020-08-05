@@ -1,12 +1,6 @@
-var myApp = angular.module('myApp', [
-  'ngRoute',
-  'myControllers'
-]);
-
-myApp.config(['$routeProvider',function ($routeProvider){
-  $routeProvider
-  when('/',{
-    templateUrl: 'js/patial/search.html'
-    controller: 'SearchController'
+var myApp = angular.module('myApp', ['ngRoute','myControllers'])
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/', {
+    templateUrl:'js/partial/search.html', controller: 'SearchController'
   });
 }]);
