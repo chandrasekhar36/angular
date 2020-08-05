@@ -1,9 +1,12 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', [
+  'ngRoute',
+  'myControllers'
+]);
 
-myApp.controller('MyController', function MyController($scope,$http) {
-  $http.get('js/data.json').then((response)=>{
-    $scope.artists=response.data
-    $scope.artistOrder="name"
+myApp.config(['$routeProvider',function ($routeProvider){
+  $routeProvider
+  when('/',{
+    templateUrl: 'js/patial/search.html'
+    controller: 'SearchController'
   });
-
-});
+}]);
