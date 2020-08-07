@@ -15,6 +15,7 @@
                 ng-model="query">
               </div><!-- col-12 -->
             </div><!-- form-row -->
+
             <div class="form-row">
             <div class="col">
           <select class="form-control form-control-inline mr-3 w-100" ng-model="artistOrder">
@@ -43,6 +44,7 @@
       <ul class=" list-group d-flex">
         <li class="list-group-item" ng-repeat="item in artists | filter: query | orderBy:artistOrder:order">
 
+            <a href="#/details/{{artists.indexOf(item)}}">
             <div class="media d-flex align-items-center">
               <img class="rounded-circle mr-3"
                 ng-src="images/{{item.shortname}}_tn.jpg"
@@ -52,6 +54,7 @@
                 <div class="text-secondary font-italic">{{item.reknown | lowercase}}</div>
               </div><!-- media-body -->
             </div><!-- media -->
+            </a>
 
         </li>
       </ul>

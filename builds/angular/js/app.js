@@ -1,6 +1,10 @@
 var myApp = angular.module('myApp', ['ngRoute','myControllers'])
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/', {
+  $routeProvider
+  .when('/', {
     templateUrl:'js/partial/search.html', controller: 'SearchController'
+  })
+  .when('/details/:itemId', {
+    templateUrl:'js/partial/details.html', controller: 'DetailsController'
   });
 }]);
